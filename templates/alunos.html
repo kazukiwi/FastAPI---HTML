@@ -12,21 +12,29 @@
     <div class="container">
         <h1>Lista de alunos</h1>
         <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Nota</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <body>
-            <tr>
-                <td>Felipe</td>
-                <td>10.0</td>
-                <td>Aprovado</td>
-            </tr>
-        </body>
-    </table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nota</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for aluno in listar_alunos %}
+                <tr class="{% if aluno.nota >= 7 %}aprovado{% else %}reprovado{% endif %}">
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.nota }}</td>
+                    <td>
+                        {% if aluno.nota >= 7 %}
+                            Aprovado
+                        {% else %}
+                            Reprovado
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 

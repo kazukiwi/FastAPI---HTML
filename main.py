@@ -27,6 +27,14 @@ alunos = [
     {
         "nome": "Joanna",
         "nota": 7.5
+    },
+    {
+        "nome": "Kazuki",
+        "nota": 5.5
+    },
+    {
+        "nome": "Vitória",
+        "nota": 4.5
     }
 ]
 
