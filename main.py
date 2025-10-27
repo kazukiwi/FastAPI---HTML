@@ -4,7 +4,10 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI("API de Alunos")
+app = FastAPI(title="API de Alunos")
+
+#Rodar o servidor
+#python -m uvicorn main:app --reload
 
 #Configura o diretório dos templates jinja2
 templates = Jinja2Templates(directory="templates")
