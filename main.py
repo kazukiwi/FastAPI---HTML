@@ -29,7 +29,7 @@ alunos = [
         "nota": 7.5
     },
     {
-        "nome": "Kazuki",
+        "nome": "Felipe",
         "nota": 5.5
     },
     {
@@ -57,3 +57,21 @@ def cadastro(request: Request):
 def salvar_aluno(nome: str = Form(...), nota: float = Form(...)):
     alunos.append({"nome": nome, "nota": nota})
     return RedirectResponse(url="/", status_code=303)
+
+#Rota de atualizar (Tela cadastro)
+@app.get("/atualizar")
+def atualizar(request: Request):
+    return templates.TemplateResponse(
+        "atualizar.html", {"request": request}
+    )
+
+#Rota de atulizar na lista
+@app.post("/atualizar")
+def atualizar_alunos(nome: str = Form(...), nota: float = Form(...)):
+    for aluno in alunos:
+        if aluno["nome"] == nome:  
+            aluno["nota"] = nota   
+            return RedirectResponse(url="/", status_code=303)
+    
+    raise HTTPException(status_code=404, detail="Aluno não encontrado")
+
