@@ -61,3 +61,46 @@ tr:hover {
     background-color: #e8f4fd;
     transition: 0.3s;
 }
+
+.botao {
+background-color: rgb(243, 155, 224);
+color: white;
+padding: 15px 32px;
+text-align: center;
+border-radius: 10px;
+text-decoration: none;
+border: none;
+cursor: pointer;
+}
+
+.botao:hover{
+    background: #e280e2;
+    box-shadow:0 8px 16px 0 rgba(170, 98, 152, 0.6)
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    background-color: #f8c9f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 ;
+    margin-top: 20px;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 250px;
+}
+
+.voltar {
+    display: block;
+    margin-top: 25px;
+    color: #e0a6e6;
+    text-decoration: none;
+}
